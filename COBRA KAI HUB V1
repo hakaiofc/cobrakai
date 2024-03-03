@@ -1,11 +1,8 @@
+MAINTTL = "STRAW HUB"
 
-local VLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/hakaiofc/cobrakai/main/COBRA%20KAI%20HUB%20V1"))()
+local win = VLib:Window("COBRA KAI", Color3.fromRGB(196, 40, 28))
 
-MAINTTL = "COBRA KAI HUB V1"
-
-local win = VLib:Window("COBRA KAI V1 ", Color3.fromRGB(196, 40, 28))
-
-local ss = win:Tab("MENU")
+local ss = win:Tab("MAIN")
 local sss = win:Tab("CREDITS")
 
 --ANTI AFK 
@@ -23,19 +20,40 @@ LP = game.Players.LocalPlayer
 VIM = game:GetService("VirtualInputManager")
 
 --MAIN SCRIPT
-
-ss:Toggle("Autofarm ALL",function(t)
-    farm = t  _G.KVN_OFC = true 
-while _G.KVN_OFC do wait(0.48)if _G.KVN_OFC == false then return end
+ss:Toggle("Autofarm Pushups",function(t)
+    farm = t  
+    while farm do wait(0.48) 
       pcall(function()
-game:GetService("ReplicatedStorage").Remotes.Dumbbell:FireServer()
-
 game:GetService("ReplicatedStorage").Remotes.Pushup:FireServer()
-
-game:GetService("ReplicatedStorage").Remotes.Situp:FireServer()
-
      end)  
   end
+end) 
+
+ss:Toggle("Autofarm Situps",function(t)
+    farm3 = t 
+    while farm3 do wait(0.48) 
+      pcall(function()
+game:GetService("ReplicatedStorage").Remotes.Situp:FireServer()
+     end)  
+  end
+end) 
+
+
+ss:Toggle("AutoUse Dumbells",function(t)
+dumb = t 
+while dumb do wait(0.48) 
+    pcall(function()
+game:GetService("ReplicatedStorage").Remotes.Dumbbell:FireServer()
+end) 
+end 
+end) 
+
+ss:Button("Invite Everyone In Dojo",function()
+for i,v in pairs(game.Players:GetChildren()) do 
+    if v~= game.Players.LocalPlayer then 
+game:GetService("ReplicatedStorage").Invite:FireServer(v.Name)
+        end   
+    end 
 end) 
 
 
