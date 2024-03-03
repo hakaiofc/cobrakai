@@ -34,7 +34,6 @@ game:GetService("ReplicatedStorage").Remotes.Pushup:FireServer()
 
 game:GetService("ReplicatedStorage").Remotes.Situp:FireServer()
 
-end
      end)  
   end
 end) 
